@@ -3,29 +3,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:pokedex/pokemon.dart' as Pokedex;
-
-Future<List<Pokedex.Pokemon>> fetchPokemon() async {
-  String url = 'https://pokeapi.co/api/v2/pokemon/?limit=717';
-  http.Response response = await http.get(
-      Uri.encodeFull(url),
-      headers: {
-        'Accept': 'application/json'
-      },
-  );
-
-  List parsed = json.decode(response.body)['results'];
-  print(response.body);
-  return parsed.map<Pokedex.Pokemon>((json) => Pokedex.Pokemon.fromJson(json)).toList();
-}
-
-List<Pokedex.Pokemon> parsePokemon(String responseBody) {
-  List parsed = json.decode(responseBody)['results'];
-  print(responseBody);
-  return parsed.map<Pokedex.Pokemon>((json) => Pokedex.Pokemon.fromJson(json)).toList();
-}
+import 'package:pokedex/pokemon.dart';
+import 'package:pokedex/pokemonServices.dart';
 
 var client = new http.Client();
+final pokemonServices = new PokemonServices();
 
 void main() => runApp(new MyApp());
 
@@ -66,17 +48,18 @@ class PokemonListState extends State<PokemonList> {
   }
 
   Widget pokemonScaffold(BuildContext context) {
+
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('POKEDEX'),
       ),
-      body: pokemons(context)
+      body: pokemonList(context)
     );
   }
   
-  Widget pokemons(BuildContext context) {
+  Widget pokemonList(BuildContext context) {
     return new FutureBuilder(
-        future: fetchPokemon(),
+        future: pokemonServices.fetchPokemonList(),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
 
@@ -87,35 +70,35 @@ class PokemonListState extends State<PokemonList> {
     );
   }
 
-  Widget pokemonListView(BuildContext context, List<Pokedex.Pokemon> pokemon) {
+  Widget pokemonListView(BuildContext context, List<Pokemon> pokemon) {
     return GridView.count(
       crossAxisCount: 3,
       children: List.generate(pokemon.length, (index) {
         return new Center(
-          child: pokemonListTile(pokemon[index].name, index),
+          child: pokemonListTile(pokemon[index], index),
         );
       }),
     );
 
-//    return new ListView.builder(
-//      padding: const EdgeInsets.all(16.0),
-//      itemBuilder:
-//        (BuildContext _context, int i) =>
-//          pokemonListTile(pokemon[i].name),
-//      itemCount: pokemon.length,
-//    );
-
   }
 
-  Widget pokemonListTile(String name, int index) {
+  Widget pokemonListTile(Pokemon pokemon, int index) {
     return new ListTile(
-      title: Image.asset('images/${(index + 1)}.png', width: 100.0, height: 100.0,),
+      title: Image.asset('images/${(index + 1)}.png', width: 100.0, height: 100.0),
       subtitle:  Text(
-        name,
+        pokemon.name,
         textAlign: TextAlign.center,
       ),
       onTap: () {
-        print('coolio');
+        new FutureBuilder(
+          future: pokemonServices.fetchPokemonDetails(pokemon.url),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) print(snapshot.error);
+            return snapshot.hasData
+                ? null : new Center(child: new CircularProgressIndicator());
+          },
+        );
+
       },
     );
   }
