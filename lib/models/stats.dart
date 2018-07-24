@@ -6,6 +6,7 @@ class Stat {
   Stat(this.url, this.name);
 
   factory Stat.fromJson(Map<String, dynamic> json) {
+    print(json);
     return Stat(
         json['url'],
         json['name']
@@ -22,9 +23,9 @@ class Stats {
 
   factory Stats.fromJson(Map<String, dynamic> json) {
     return Stats(
-        Stat.fromJson(json),
+        Stat.fromJson(json['stat']),
         json['effort'],
-        json['baseStat']
+        json['base_stat']
     );
   }
 }

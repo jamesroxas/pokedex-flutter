@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:pokedex/pokemon.dart';
-import 'package:pokedex/stats.dart';
+import 'package:pokedex/models/pokemon.dart';
+import 'package:pokedex/models/stats.dart';
 
 class PokemonServices {
   Future<List<Pokemon>> fetchPokemonList() async {
@@ -28,7 +28,10 @@ class PokemonServices {
     );
 
     List parsed = json.decode(response.body)['stats'];
-    print(parsed.map<Stats>((json) => Stats.fromJson(json)).toList());
-    return parsed.map<Stats>((json) => Stats.fromJson(json)).toList();
+
+    List<Stats> stats = parsed.map<Stats>((json) =>
+        Stats.fromJson(json)).toList();
+
+    return stats;
   }
 }

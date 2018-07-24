@@ -1,9 +1,9 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:pokedex/pokemon.dart';
+
+import 'package:pokedex/models/pokemon.dart';
+import 'package:pokedex/models/stats.dart';
+
 import 'package:pokedex/pokemonServices.dart';
 
 var client = new http.Client();
@@ -50,32 +50,32 @@ class PokemonListState extends State<PokemonList> {
   Widget pokemonScaffold(BuildContext context) {
 
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('POKEDEX'),
-      ),
-      body: pokemonList(context)
+        appBar: new AppBar(
+          title: new Text('POKEDEX'),
+        ),
+        body: pokemonList()
     );
   }
-  
-  Widget pokemonList(BuildContext context) {
+
+  Widget pokemonList() {
     return new FutureBuilder(
         future: pokemonServices.fetchPokemonList(),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
 
           return snapshot.hasData
-              ? pokemonListView(context, snapshot.data)
+              ? pokemonListView(snapshot.data)
               : Center(child: CircularProgressIndicator());
         }
     );
   }
 
-  Widget pokemonListView(BuildContext context, List<Pokemon> pokemon) {
+  Widget pokemonListView(List<Pokemon> pokemon) {
     return GridView.count(
       crossAxisCount: 3,
       children: List.generate(pokemon.length, (index) {
         return new Center(
-          child: pokemonListTile(pokemon[index], index),
+          child: pokemonListTile(pokemon[index], index)
         );
       }),
     );
@@ -98,7 +98,6 @@ class PokemonListState extends State<PokemonList> {
                 ? null : new Center(child: new CircularProgressIndicator());
           },
         );
-
       },
     );
   }
