@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74cbff04-e5cd-4bcc-a565-3f1b615fb67f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/pokemonList.dart" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/lib/pokemonProfile.dart" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/lib/pokemon.dart" afterPath="$PROJECT_DIR$/lib/models/pokemon.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/pokemonServices.dart" afterPath="$PROJECT_DIR$/lib/pokemonServices.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/stats.dart" afterPath="$PROJECT_DIR$/lib/models/stats.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/pokemonList.dart" afterPath="$PROJECT_DIR$/lib/pokemonList.dart" />
       <change beforePath="$PROJECT_DIR$/test/widget_test.dart" afterPath="$PROJECT_DIR$/test/widget_test.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -30,8 +26,8 @@
       <file leaf-file-name="pokemonList.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pokemonList.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="94" column="40" lean-forward="true" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+            <state relative-caret-position="330">
+              <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -42,23 +38,35 @@
       <file leaf-file-name="widget_test.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/widget_test.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+            <state relative-caret-position="210">
+              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
               <folding>
-                <element signature="e#0#1054#0" expanded="true" />
+                <element signature="e#0#1060#0" expanded="true" />
                 <element signature="e#354#393#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pokemonServices.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pokemonServices.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/pokemonServices.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="361">
+              <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pokemonProfile.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/pokemonProfile.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/lib/models/pokemon.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -78,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/lib/models/stats.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+              <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -133,11 +141,11 @@
         <option value="$PROJECT_DIR$/lib/pokemonDetails.dart" />
         <option value="$PROJECT_DIR$/lib/stats.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
-        <option value="$PROJECT_DIR$/lib/pokemonProfile.dart" />
-        <option value="$PROJECT_DIR$/test/widget_test.dart" />
-        <option value="$PROJECT_DIR$/lib/pokemonList.dart" />
         <option value="$PROJECT_DIR$/lib/models/stats.dart" />
         <option value="$PROJECT_DIR$/lib/pokemonServices.dart" />
+        <option value="$PROJECT_DIR$/test/widget_test.dart" />
+        <option value="$PROJECT_DIR$/lib/pokemonList.dart" />
+        <option value="$PROJECT_DIR$/lib/pokemonProfile.dart" />
       </list>
     </option>
   </component>
@@ -202,6 +210,7 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/ffuf/Documents/Project/pokedex/lib/pokemonList.dart" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -360,7 +369,7 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978093" sideWeight="0.49266863" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Flutter Inspector" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32961878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -615,6 +624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="337" column="8" lean-forward="false" selection-start-line="337" selection-start-column="8" selection-end-line="337" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +675,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pokemonProfile.dart" />
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -674,21 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/widget_test.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="43" lean-forward="true" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#1054#0" expanded="true" />
-            <element signature="e#354#393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/pokemon.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -696,27 +694,48 @@
     <entry file="file://$PROJECT_DIR$/lib/models/stats.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pokemonList.dart">
+    <entry file="file://$PROJECT_DIR$/test/widget_test.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="94" column="40" lean-forward="true" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+        <state relative-caret-position="210">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#1060#0" expanded="true" />
+            <element signature="e#354#393#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pokemonServices.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="361">
+          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pokemonList.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pokemonProfile.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

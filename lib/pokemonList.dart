@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:pokedex/models/pokemon.dart';
-import 'package:pokedex/models/stats.dart';
 
 import 'package:pokedex/pokemonServices.dart';
+import 'package:pokedex/pokemonProfile.dart';
 
 var client = new http.Client();
 final pokemonServices = new PokemonServices();
 
-void main() => runApp(new MyApp());
+void main() => runApp(new PokemonList());
 
-class MyApp extends StatelessWidget {
+class PokemonList extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -28,17 +28,20 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new PokemonList(),
+      home: new PokemonListStateful(),
+      routes: <String, WidgetBuilder> {
+        'pokemonProfile': (BuildContext context) => new PokemonProfile()
+      },
     );
   }
 }
 
-class PokemonList extends StatefulWidget {
+class PokemonListStateful extends StatefulWidget {
   @override
   PokemonListState createState() => new PokemonListState();
 }
 
-class PokemonListState extends State<PokemonList> {
+class PokemonListState extends State<PokemonListStateful> {
   final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
 
   @override
@@ -53,36 +56,36 @@ class PokemonListState extends State<PokemonList> {
         appBar: new AppBar(
           title: new Text('POKEDEX'),
         ),
-        body: pokemonList()
+        body: pokemonList(context)
     );
   }
 
-  Widget pokemonList() {
+  Widget pokemonList(BuildContext context) {
     return new FutureBuilder(
         future: pokemonServices.fetchPokemonList(),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
 
           return snapshot.hasData
-              ? pokemonListView(snapshot.data)
+              ? pokemonListView(context, snapshot.data)
               : Center(child: CircularProgressIndicator());
         }
     );
   }
 
-  Widget pokemonListView(List<Pokemon> pokemon) {
+  Widget pokemonListView(BuildContext context, List<Pokemon> pokemon) {
     return GridView.count(
       crossAxisCount: 3,
       children: List.generate(pokemon.length, (index) {
         return new Center(
-          child: pokemonListTile(pokemon[index], index)
+          child: pokemonListTile(context, pokemon[index], index)
         );
       }),
     );
 
   }
 
-  Widget pokemonListTile(Pokemon pokemon, int index) {
+  Widget pokemonListTile(BuildContext context, Pokemon pokemon, int index) {
     return new ListTile(
       title: Image.asset('images/${(index + 1)}.png', width: 100.0, height: 100.0),
       subtitle:  Text(
@@ -90,14 +93,24 @@ class PokemonListState extends State<PokemonList> {
         textAlign: TextAlign.center,
       ),
       onTap: () {
-        new FutureBuilder(
-          future: pokemonServices.fetchPokemonDetails(pokemon.url),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) print(snapshot.error);
-            return snapshot.hasData
-                ? null : new Center(child: new CircularProgressIndicator());
-          },
-        );
+        var route = new MaterialPageRoute(builder: (BuildContext build) => new PokemonProfile(pokemon: pokemon));
+
+        Navigator.of(context).push(route);
+
+//        Navigator.of(context).pushNamed('pokemonProfile');
+//        new FutureBuilder(
+//          future: pokemonServices.fetchPokemonDetails(pokemon.url),
+//          builder: (context, snapshot) {
+//            if (snapshot.hasError) print(snapshot.error);
+//            print(snapshot.hasData);
+//            return snapshot.hasData
+//                ? Navigator.push(
+//                  context,
+//                  MaterialPageRoute(builder: (context) => PokemonProfile())
+//                )
+//                : Center(child: CircularProgressIndicator());
+//          },
+//        );
       },
     );
   }
